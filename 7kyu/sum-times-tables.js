@@ -30,3 +30,17 @@ function sumTimesTables(tables, min, max) {
   }
   return final;
 }
+
+//REFACTOR
+
+function sumTimesTables(tables,min,max){
+  const final = [];
+  for (let i=min; i<=max; i++) {
+    final.push(i);
+  }
+  return final.reduce((a,b)=>{
+    return a + tables.reduce((c,d) => {
+      return c + d*b;
+    },0);
+  },0);
+}
