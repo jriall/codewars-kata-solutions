@@ -13,11 +13,11 @@
 // SOLUTION
 
 function malwareValidate(hashArr) {
-  return hashArr.filter((a,i)=>{
-    const lowerCaseLetterRegex = new RegExp(/[^a-z]/, "g");
-    const numberRegex = new RegExp(/[^0-9]/, "g")
-     if (a.length === 10 && a.replace(lowerCaseLetterRegex, "").length === 5 && a.replace(numberRegex, "").length === 5 && hashArr.indexOf(a) == i) {
-       return true;
-     }
-  });
+  return hashArr.filter(
+    (a, i) =>
+      a.length === 10 &&
+      a.replace(/[^a-z]/g, "").length === 5 &&
+      a.replace(/[^0-9]/g, "").length === 5 &&
+      hashArr.indexOf(a) == i
+  );
 }
